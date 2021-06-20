@@ -3,13 +3,31 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "PORT=4500 next dev",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
+    "@next-auth/prisma-adapter": "^0.4.4-canary.64",
+    "@prisma/client": "^2.25.0",
+    "chalk": "^4.1.1",
+    "classnames": "^2.3.1",
     "next": "11.0.0",
+    "next-auth": "^3.27.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "sass": "^1.35.1"
+  },
+  "devDependencies": {
+    "@types/node": "^15.12.4",
+    "@types/react": "^17.0.11",
+    "autoprefixer": "^10.2.6",
+    "eslint": "^7.29.0",
+    "eslint-config-next": "^11.0.0",
+    "eslint-plugin-functional": "^3.2.1",
+    "postcss": "^8.3.5",
+    "prisma": "^2.25.0",
+    "tailwindcss": "^2.2.2",
+    "typescript": "^4.3.4"
   }
 }
