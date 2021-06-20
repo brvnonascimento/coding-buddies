@@ -1,31 +1,24 @@
-import { useSession } from 'next-auth/client';
+import { useSession, signOut } from 'next-auth/client';
+import { useRouter } from 'next/router';
 
 const Home = () => {
+  const router = useRouter();
+
   const [session, loading] = useSession();
 
   if (loading) {
     return 'Loading...';
   }
 
-  if (session) {
-    return 'Logged In';
+  if (!session) {
+    return router.push('/api/auth/signin');
   }
 
   return (
     <main>
-      <h1>Login</h1>
+      <h1>Logged In</h1>
 
-      <section>
-        <form>
-          <label id="email">E-mail</label>
-          <input id="email" />
-
-          <label id="password">Password</label>
-          <input id="password" type="password" />
-
-          <button type="submit">Login</button>
-        </form>
-      </section>
+      <button onClick={() => signOut()}>Logout</button>
     </main>
   );
 };
