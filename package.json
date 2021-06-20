@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "PORT=4500 next dev",
     "build": "next build",
+    "vercel-build": "prisma migrate deploy && next build",
     "start": "next start"
   },
   "dependencies": {
